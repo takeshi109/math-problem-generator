@@ -1,0 +1,16 @@
+# 不要な依存関係
+node_modules/
+.next/
+out/
+build/
+
+# ローカルのデータベース（共有しない場合）
+problem_bank.json
+*.db
+
+# OSが生成するゴミ
+.DS_Store
+Thumbs.db
+
+# 環境変数（APIキーなどを書く予定があれば）
+.env*.local
