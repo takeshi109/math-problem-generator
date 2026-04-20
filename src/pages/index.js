@@ -107,15 +107,15 @@ export default function Home() {
       <section style={{ marginBottom: '30px' }}>
         <p>2. TeXファイルを読み込んで解析</p>
         <FileUploader onUpload={handleUpload} />
-      </section>
-
-      {problems.length > 0 && (
+      </section>      {problems.length > 0 && (
         <div style={{ textAlign: 'right', marginBottom: '10px' }}>
           <button onClick={toggleAll} style={subButtonStyle}>
             {selectedIds.length === problems.length ? "全解除" : "全選択"}
           </button>
         </div>
       )}
+
+
 
       {isLoading && <p style={{ textAlign: 'center', color: '#0070f3' }}>✨ 処理中...</p>}
 
