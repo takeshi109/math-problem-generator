@@ -1,28 +1,25 @@
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "http://localhost:8000";
 
 export const dbClient = {
-    // 1. 解析した問題をDBに保存
     save: async (problems) => {
-        const res = await fetch(`${API_BASE}/save`, {
+        const res = await fetch(`${API_BASE}/api/save`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ problems })
+            body: JSON.stringify(problems)
         });
         return res.json();
     },
 
-    // 2. DBに溜まった全問題を取得
     fetchAll: async () => {
-        const res = await fetch(`${API_BASE}/problems`);
+        const res = await fetch(`${API_BASE}/problems`); // ★ここ
         return res.json();
     },
 
-    // 3. 指定したIDの問題をDBから削除
     delete: async (ids) => {
-        const res = await fetch(`${API_BASE}/delete`, {
+        const res = await fetch(`${API_BASE}/api/delete`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ids }) // Python側の ids = data.get('ids') と一致
+            body: JSON.stringify({ ids })
         });
         return res.json();
     }

@@ -3,8 +3,8 @@
  */
 export const downloadPdfFromServer = async (texString, fileName = "math_print.pdf") => {
   try {
-    // 【ここを修正】自分のPCで動いている Python サーバーを宛先にします
-    const API_ENDPOINT = "http://127.0.0.1:5000/generate-pdf";
+    
+    const API_ENDPOINT = "http://127.0.0.1:8000/generate-pdf";
 
     console.log(" ローカルサーバーに TeX データを送信中...");
 

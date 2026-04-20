@@ -9,7 +9,7 @@
 export const generateFullTex = (selectedProblems, title = "数学演習プリント") => {
   
   // 1. ヘッダー（型紙の冒頭部分）
-  // 佐々木さんの論文に基づき、XeLaTeX + 日本語対応の構成にします
+
   const header = `\\documentclass[xelatex,ja=standard]{bxjsarticle}
 \\usepackage{amsmath, amssymb}
 \\usepackage[ipaex]{zxjafont}

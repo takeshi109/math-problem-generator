@@ -1,25 +1,17 @@
-import React from 'react';
+// components/MathPreview.js の例
 import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import 'katex/dist/katex.min.css'; // これを忘れると数式が崩れます！
+import 'katex/dist/katex.min.css';
 
-const MathPreview = ({ tex }) => {
-  // AIが返してきた文字列が空の場合は何も出さない
-  if (!tex) return null;
-
-  const formattedTex = tex.startsWith('$') ? tex : `$$${tex}$$`;
-
+export default function MathPreview({ tex }) {
   return (
-    <div className="math-preview" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-      <ReactMarkdown
-        remarkPlugins={[remarkMath]}
-        rehypePlugins={[rehypeKatex]}
-      >
-        {tex}
-      </ReactMarkdown>
-    </div>
+    <ReactMarkdown 
+      remarkPlugins={[remarkMath]} 
+      rehypePlugins={[rehypeKatex]}
+    >
+      {/* 渡された文字列を $$ で囲って数式モードにする */}
+      {`$$ ${tex} $$`}
+    </ReactMarkdown>
   );
-};
-
-export default MathPreview;
+}
